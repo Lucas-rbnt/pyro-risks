@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>pyronear_ds.datasets.weather &mdash; pyronear_ds 0.1.0a0-git documentation</title>
+  <title>pyro_risks.datasets.weather &mdash; pyro_risks 0.1.0a0-git documentation</title>
   
 
   
@@ -50,7 +50,7 @@
           
 
           
-            <a href="../../../index.html" class="icon icon-home"> pyronear_ds
+            <a href="../../../index.html" class="icon icon-home"> pyro_risks
           
 
           
@@ -93,7 +93,7 @@
 </ul>
 <p class="caption"><span class="caption-text">Package Documentation</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../datasets.html">pyronear_ds.datasets</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../datasets.html">pyro_risks.datasets</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../../datasets.html#region-tiling">Region tiling</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../datasets.html#france">France</a></li>
 </ul>
@@ -122,7 +122,7 @@
       <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../../../index.html">pyronear_ds</a>
+          <a href="../../../index.html">pyro_risks</a>
         
       </nav>
 
@@ -155,7 +155,7 @@
         
           <li><a href="../../index.html">Module code</a> &raquo;</li>
         
-      <li>pyronear_ds.datasets.weather</li>
+      <li>pyro_risks.datasets.weather</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -170,19 +170,19 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <h1>Source code for pyronear_ds.datasets.weather</h1><div class="highlight"><pre>
+  <h1>Source code for pyro_risks.datasets.weather</h1><div class="highlight"><pre>
 <span></span><span class="kn">import</span> <span class="nn">logging</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">import</span> <span class="nn">geopandas</span> <span class="k">as</span> <span class="nn">gpd</span>
 <span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">List</span><span class="p">,</span> <span class="n">Optional</span>
 
-<span class="kn">from</span> <span class="nn">pyronear_ds</span> <span class="kn">import</span> <span class="n">config</span> <span class="k">as</span> <span class="n">cfg</span>
+<span class="kn">from</span> <span class="nn">pyro_risks</span> <span class="kn">import</span> <span class="n">config</span> <span class="k">as</span> <span class="n">cfg</span>
 <span class="kn">from</span> <span class="nn">.masks</span> <span class="kn">import</span> <span class="n">get_french_geom</span>
 
 <span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;NOAAWeather&#39;</span><span class="p">]</span>
 
 
-<div class="viewcode-block" id="NOAAWeather"><a class="viewcode-back" href="../../../datasets.html#pyronear_ds.datasets.NOAAWeather">[docs]</a><span class="k">class</span> <span class="nc">NOAAWeather</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">):</span>
+<div class="viewcode-block" id="NOAAWeather"><a class="viewcode-back" href="../../../datasets.html#pyro_risks.datasets.NOAAWeather">[docs]</a><span class="k">class</span> <span class="nc">NOAAWeather</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Weather dataset on French territory, accessible upon request to NOAA. Requests are to be made at:</span>
 <span class="sd">    https://www.ncdc.noaa.gov/cdo-web.</span>
 

@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>pyronear_ds.datasets &mdash; pyronear_ds 0.1.0a0-git documentation</title>
+  <title>pyro_risks.datasets &mdash; pyro_risks 0.1.0a0-git documentation</title>
   
 
   
@@ -51,7 +51,7 @@
           
 
           
-            <a href="index.html" class="icon icon-home"> pyronear_ds
+            <a href="index.html" class="icon icon-home"> pyro_risks
           
 
           
@@ -94,7 +94,7 @@
 </ul>
 <p class="caption"><span class="caption-text">Package Documentation</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">pyronear_ds.datasets</a><ul>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">pyro_risks.datasets</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#region-tiling">Region tiling</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#france">France</a></li>
 </ul>
@@ -123,7 +123,7 @@
       <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="index.html">pyronear_ds</a>
+          <a href="index.html">pyro_risks</a>
         
       </nav>
 
@@ -154,7 +154,7 @@
     
       <li><a href="index.html">Docs</a> &raquo;</li>
         
-      <li>pyronear_ds.datasets</li>
+      <li>pyro_risks.datasets</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -173,8 +173,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="pyronear-ds-datasets">
-<h1>pyronear_ds.datasets<a class="headerlink" href="#pyronear-ds-datasets" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="pyro-risks-datasets">
+<h1>pyro_risks.datasets<a class="headerlink" href="#pyro-risks-datasets" title="Permalink to this headline">¶</a></h1>
 <p>The datasets submodule contains datasets with entries indexed by location and datetime, to help prediction outbreak
 risks and wildfire evolution. Using those datasets means that you comply with the usage restrictions from the
 corresponding authors.</p>
@@ -206,8 +206,8 @@ These tools are meant to help with the aggregation process by defining sub-areas
 <div class="section" id="france">
 <h3><a class="toc-backref" href="#id4">France</a><a class="headerlink" href="#france" title="Permalink to this headline">¶</a></h3>
 <dl class="py function">
-<dt id="pyronear_ds.datasets.get_french_geom">
-<code class="sig-prename descclassname">pyronear_ds.datasets.</code><code class="sig-name descname">get_french_geom</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">path</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>str<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span> &#x2192; geopandas.geodataframe.GeoDataFrame<a class="reference internal" href="_modules/pyronear_ds/datasets/masks.html#get_french_geom"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyronear_ds.datasets.get_french_geom" title="Permalink to this definition">¶</a></dt>
+<dt id="pyro_risks.datasets.get_french_geom">
+<code class="sig-prename descclassname">pyro_risks.datasets.</code><code class="sig-name descname">get_french_geom</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">path</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>str<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span> &#x2192; geopandas.geodataframe.GeoDataFrame<a class="reference internal" href="_modules/pyro_risks/datasets/masks.html#get_french_geom"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyro_risks.datasets.get_french_geom" title="Permalink to this definition">¶</a></dt>
 <dd><p>Creates the dataframe with the geometry of French departments</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -224,8 +224,8 @@ These tools are meant to help with the aggregation process by defining sub-areas
 <div class="section" id="id1">
 <h3><a class="toc-backref" href="#id6">France</a><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
 <dl class="py class">
-<dt id="pyronear_ds.datasets.NOAAWeather">
-<em class="property">class </em><code class="sig-prename descclassname">pyronear_ds.datasets.</code><code class="sig-name descname">NOAAWeather</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">source_path</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>str<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">use_cols</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>List<span class="p">[</span>str<span class="p">]</span><span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyronear_ds/datasets/weather.html#NOAAWeather"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyronear_ds.datasets.NOAAWeather" title="Permalink to this definition">¶</a></dt>
+<dt id="pyro_risks.datasets.NOAAWeather">
+<em class="property">class </em><code class="sig-prename descclassname">pyro_risks.datasets.</code><code class="sig-name descname">NOAAWeather</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">source_path</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>str<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">use_cols</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>List<span class="p">[</span>str<span class="p">]</span><span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyro_risks/datasets/weather.html#NOAAWeather"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyro_risks.datasets.NOAAWeather" title="Permalink to this definition">¶</a></dt>
 <dd><p>Weather dataset on French territory, accessible upon request to NOAA. Requests are to be made at:
 <a class="reference external" href="https://www.ncdc.noaa.gov/cdo-web">https://www.ncdc.noaa.gov/cdo-web</a>.</p>
 <dl class="field-list simple">
@@ -246,8 +246,8 @@ These tools are meant to help with the aggregation process by defining sub-areas
 <div class="section" id="id2">
 <h3><a class="toc-backref" href="#id8">France</a><a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
 <dl class="py class">
-<dt id="pyronear_ds.datasets.BDIFFHistory">
-<em class="property">class </em><code class="sig-prename descclassname">pyronear_ds.datasets.</code><code class="sig-name descname">BDIFFHistory</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">source_path</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>str<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">use_cols</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>List<span class="p">[</span>str<span class="p">]</span><span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyronear_ds/datasets/wildfires.html#BDIFFHistory"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyronear_ds.datasets.BDIFFHistory" title="Permalink to this definition">¶</a></dt>
+<dt id="pyro_risks.datasets.BDIFFHistory">
+<em class="property">class </em><code class="sig-prename descclassname">pyro_risks.datasets.</code><code class="sig-name descname">BDIFFHistory</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">source_path</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>str<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">use_cols</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>List<span class="p">[</span>str<span class="p">]</span><span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyro_risks/datasets/wildfires.html#BDIFFHistory"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyro_risks.datasets.BDIFFHistory" title="Permalink to this definition">¶</a></dt>
 <dd><p>Wildfire history dataset on French territory, accessible at <a class="reference external" href="https://bdiff.agriculture.gouv.fr/">https://bdiff.agriculture.gouv.fr/</a>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
