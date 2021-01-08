@@ -24,7 +24,6 @@
         <script src="../../../_static/jquery.js"></script>
         <script src="../../../_static/underscore.js"></script>
         <script src="../../../_static/doctools.js"></script>
-        <script src="../../../_static/language_data.js"></script>
     
     <script type="text/javascript" src="../../../_static/js/theme.js"></script>
 
@@ -179,7 +178,7 @@
 <span class="kn">from</span> <span class="nn">pyro_risks</span> <span class="kn">import</span> <span class="n">config</span> <span class="k">as</span> <span class="n">cfg</span>
 <span class="kn">from</span> <span class="nn">.masks</span> <span class="kn">import</span> <span class="n">get_french_geom</span>
 
-<span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;NOAAWeather&#39;</span><span class="p">]</span>
+<span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;NOAAWeather&quot;</span><span class="p">]</span>
 
 
 <div class="viewcode-block" id="NOAAWeather"><a class="viewcode-back" href="../../../datasets.html#pyro_risks.datasets.NOAAWeather">[docs]</a><span class="k">class</span> <span class="nc">NOAAWeather</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">):</span>
@@ -191,30 +190,61 @@
 <span class="sd">        use_cols: columns to read from source</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
-    <span class="n">kept_cols</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;STATION&#39;</span><span class="p">,</span> <span class="s1">&#39;DATE&#39;</span><span class="p">,</span> <span class="s1">&#39;LATITUDE&#39;</span><span class="p">,</span> <span class="s1">&#39;LONGITUDE&#39;</span><span class="p">,</span> <span class="s1">&#39;ELEVATION&#39;</span><span class="p">,</span> <span class="s1">&#39;DEWP&#39;</span><span class="p">,</span> <span class="s1">&#39;DEWP_ATTRIBUTES&#39;</span><span class="p">,</span>
-                 <span class="s1">&#39;FRSHTT&#39;</span><span class="p">,</span> <span class="s1">&#39;GUST&#39;</span><span class="p">,</span> <span class="s1">&#39;MAX&#39;</span><span class="p">,</span> <span class="s1">&#39;MIN&#39;</span><span class="p">,</span> <span class="s1">&#39;MXSPD&#39;</span><span class="p">,</span> <span class="s1">&#39;PRCP&#39;</span><span class="p">,</span> <span class="s1">&#39;SLP&#39;</span><span class="p">,</span> <span class="s1">&#39;SLP_ATTRIBUTES&#39;</span><span class="p">,</span>
-                 <span class="s1">&#39;SNDP&#39;</span><span class="p">,</span> <span class="s1">&#39;STP&#39;</span><span class="p">,</span> <span class="s1">&#39;STP_ATTRIBUTES&#39;</span><span class="p">,</span> <span class="s1">&#39;TEMP&#39;</span><span class="p">,</span> <span class="s1">&#39;TEMP_ATTRIBUTES&#39;</span><span class="p">,</span>
-                 <span class="s1">&#39;VISIB&#39;</span><span class="p">,</span> <span class="s1">&#39;VISIB_ATTRIBUTES&#39;</span><span class="p">,</span> <span class="s1">&#39;WDSP&#39;</span><span class="p">,</span> <span class="s1">&#39;WDSP_ATTRIBUTES&#39;</span><span class="p">]</span>
+    <span class="n">kept_cols</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="s2">&quot;STATION&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;DATE&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;LATITUDE&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;LONGITUDE&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;ELEVATION&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;DEWP&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;DEWP_ATTRIBUTES&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;FRSHTT&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;GUST&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;MAX&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;MIN&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;MXSPD&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;PRCP&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;SLP&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;SLP_ATTRIBUTES&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;SNDP&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;STP&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;STP_ATTRIBUTES&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;TEMP&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;TEMP_ATTRIBUTES&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;VISIB&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;VISIB_ATTRIBUTES&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;WDSP&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;WDSP_ATTRIBUTES&quot;</span><span class="p">,</span>
+    <span class="p">]</span>
 
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">source_path</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">use_cols</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span> <span class="n">source_path</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">use_cols</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">source_path</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
             <span class="c1"># Download in cache</span>
-            <span class="n">logging</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;No data source specified for </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s2">, trying fallback.&quot;</span><span class="p">)</span>
+            <span class="n">logging</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">&quot;No data source specified for </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s2">, trying fallback.&quot;</span>
+            <span class="p">)</span>
             <span class="n">source_path</span> <span class="o">=</span> <span class="n">cfg</span><span class="o">.</span><span class="n">FR_WEATHER_FALLBACK</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">use_cols</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
             <span class="n">use_cols</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">kept_cols</span>
         <span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">source_path</span><span class="p">,</span> <span class="n">usecols</span><span class="o">=</span><span class="n">use_cols</span><span class="p">)</span>
-        <span class="n">geo_df</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">GeoDataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">geometry</span><span class="o">=</span><span class="n">gpd</span><span class="o">.</span><span class="n">points_from_xy</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;LONGITUDE&quot;</span><span class="p">],</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;LATITUDE&quot;</span><span class="p">]),</span>
-                                  <span class="n">crs</span><span class="o">=</span><span class="s2">&quot;EPSG:4326&quot;</span><span class="p">)</span>
+        <span class="n">geo_df</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">GeoDataFrame</span><span class="p">(</span>
+            <span class="n">data</span><span class="p">,</span>
+            <span class="n">geometry</span><span class="o">=</span><span class="n">gpd</span><span class="o">.</span><span class="n">points_from_xy</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;LONGITUDE&quot;</span><span class="p">],</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;LATITUDE&quot;</span><span class="p">]),</span>
+            <span class="n">crs</span><span class="o">=</span><span class="s2">&quot;EPSG:4326&quot;</span><span class="p">,</span>
+        <span class="p">)</span>
         <span class="c1"># Match the polygons using the ones of each predefined country area</span>
         <span class="n">geo_masks</span> <span class="o">=</span> <span class="n">get_french_geom</span><span class="p">()</span>
         <span class="n">geo_data</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">sjoin</span><span class="p">(</span><span class="n">geo_masks</span><span class="p">,</span> <span class="n">geo_df</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s2">&quot;inner&quot;</span><span class="p">)</span>
         <span class="c1"># Drop NA</span>
         <span class="n">geo_data</span> <span class="o">=</span> <span class="n">geo_data</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
         <span class="c1"># Convert</span>
-        <span class="n">geo_data</span><span class="p">[</span><span class="s1">&#39;DATE&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">geo_data</span><span class="p">[</span><span class="s1">&#39;DATE&#39;</span><span class="p">],</span> <span class="nb">format</span><span class="o">=</span><span class="s2">&quot;%Y-%m-</span><span class="si">%d</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">errors</span><span class="o">=</span><span class="s1">&#39;coerce&#39;</span><span class="p">)</span>
+        <span class="n">geo_data</span><span class="p">[</span><span class="s2">&quot;DATE&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span>
+            <span class="n">geo_data</span><span class="p">[</span><span class="s2">&quot;DATE&quot;</span><span class="p">],</span> <span class="nb">format</span><span class="o">=</span><span class="s2">&quot;%Y-%m-</span><span class="si">%d</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">errors</span><span class="o">=</span><span class="s2">&quot;coerce&quot;</span>
+        <span class="p">)</span>
         <span class="c1"># Drop Cols</span>
-        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">geo_data</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s1">&#39;index_right&#39;</span><span class="p">,</span> <span class="s1">&#39;geometry&#39;</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span></div>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">geo_data</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s2">&quot;index_right&quot;</span><span class="p">,</span> <span class="s2">&quot;geometry&quot;</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span></div>
 </pre></div>
 
            </div>
@@ -227,7 +257,7 @@
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2020, Pyronear Contributors
+        &copy; Copyright 2021, Pyronear Contributors
 
     </p>
   </div>
