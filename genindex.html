@@ -49,9 +49,12 @@
           
 
           
-            <a href="index.html" class="icon icon-home"> pyro_risks
+            <a href="index.html">
           
 
+          
+            
+            <img src="_static/pyronear-logo-dark.png" class="logo" alt="Logo"/>
           
           </a>
 
@@ -85,26 +88,96 @@
             
               <p class="caption"><span class="caption-text">Getting Started</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="installing.html">Installation</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="installing.html#via-git">Via Git</a></li>
+<li class="toctree-l1"><a class="reference internal" href="overview/README.html">Package installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="overview/README.html#prerequisites">Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="overview/README.html#installation">Installation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="overview/README.html#package-usage">Package usage</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="overview/README.html#importing-publicly-available-datasets">Importing publicly available datasets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="overview/README.html#running-examples-scripts">Running examples scripts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="overview/README.html#running-the-web-server">Running the web server</a></li>
 </ul>
 </li>
 </ul>
-<p class="caption"><span class="caption-text">Package Documentation</span></p>
+<p class="caption"><span class="caption-text">Publicly Available Datasets</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="datasets.html">pyro_risks.datasets</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="datasets.html#region-tiling">Region tiling</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="datasets.html#france">France</a></li>
+<li class="toctree-l1"><a class="reference internal" href="overview/datasets/NASA-FIRMS_ACTIVE-FIRE_VIIRS.html">NASA FIRMS - Active Fire</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="overview/datasets/NASA-FIRMS_ACTIVE-FIRE_VIIRS.html#technical-background">Technical Background</a></li>
+<li class="toctree-l2"><a class="reference internal" href="overview/datasets/NASA-FIRMS_ACTIVE-FIRE_VIIRS.html#downloading-datasets">Downloading Datasets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="overview/datasets/NASA-FIRMS_ACTIVE-FIRE_VIIRS.html#datasets-descriptions">Datasets Descriptions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="overview/datasets/NASA-FIRMS_ACTIVE-FIRE_VIIRS.html#viirs-modis-differences">VIIRS MODIS Differences</a></li>
+<li class="toctree-l3"><a class="reference internal" href="overview/datasets/NASA-FIRMS_ACTIVE-FIRE_VIIRS.html#viirs-nrt-attribute-fields">VIIRS NRT Attribute Fields</a></li>
+<li class="toctree-l3"><a class="reference internal" href="overview/datasets/NASA-FIRMS_ACTIVE-FIRE_VIIRS.html#modis-nrt-attribute-fields">MODIS NRT Attribute Fields</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="datasets.html#weather-data">Weather data</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="datasets.html#id1">France</a></li>
+<li class="toctree-l2"><a class="reference internal" href="overview/datasets/NASA-FIRMS_ACTIVE-FIRE_VIIRS.html#acknowledgments">Acknowledgments</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="datasets.html#wildfire-history">Wildfire history</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="datasets.html#id2">France</a></li>
+<li class="toctree-l1"><a class="reference internal" href="overview/datasets/CEMS-ECMWF_FDI.html">CEMS ECMWF - Fire Danger Indices</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="overview/datasets/CEMS-ECMWF_FDI.html#technical-background">Technical Background</a></li>
+<li class="toctree-l2"><a class="reference internal" href="overview/datasets/CEMS-ECMWF_FDI.html#downloading-dataset">Downloading Dataset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="overview/datasets/CEMS-ECMWF_FDI.html#datasets-descriptions">Datasets Descriptions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="overview/datasets/CEMS-ECMWF_FDI.html#acknowledgments">Acknowledgments</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="overview/datasets/C3S-ECMWF_ERA5T.html">C3S ECMWF - ERA5T</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="overview/datasets/C3S-ECMWF_ERA5T.html#technical-background">Technical Background</a></li>
+<li class="toctree-l2"><a class="reference internal" href="overview/datasets/C3S-ECMWF_ERA5T.html#downloading-dataset">Downloading Dataset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="overview/datasets/C3S-ECMWF_ERA5T.html#datasets-descriptions">Datasets Descriptions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="overview/datasets/C3S-ECMWF_ERA5T.html#acknowledgments">Acknowledgments</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="overview/datasets/C3S-ECMWF_ERA5LAND.html">C3S ECMWF - ERA5-Land</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="overview/datasets/C3S-ECMWF_ERA5LAND.html#technical-background">Technical Background</a></li>
+<li class="toctree-l2"><a class="reference internal" href="overview/datasets/C3S-ECMWF_ERA5LAND.html#downloading-dataset">Downloading Dataset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="overview/datasets/C3S-ECMWF_ERA5LAND.html#datasets-descriptions">Datasets Descriptions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="overview/datasets/C3S-ECMWF_ERA5LAND.html#acknowledgments">Acknowledgments</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Pyro Risks Package References</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="modules/datasets/modules.html">pyro_risks.datasets</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="modules/datasets/masks.html">Masks module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="modules/datasets/nasa_firms.html">NASA FIRMS - Active Fire module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="modules/datasets/copernicus_fwi.html">Copernicus - FWI module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="modules/datasets/copernicus_era.html">Copernicus - ERA5 module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="modules/datasets/noaa_ncei.html">NOAA NCEI module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="modules/datasets/bdiff.html">BDIFF module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="modules/datasets/datasets.html">pyro_risks.datasets.datasets_mergers module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="modules/datasets/datasets.html#module-pyro_risks.datasets.era_fwi_viirs">pyro_risks.datasets.era_fwi_viirs module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="modules/datasets/datasets.html#module-pyro_risks.datasets.queries_api">pyro_risks.datasets.queries_api module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="modules/datasets/datasets.html#module-pyro_risks.datasets.utils">pyro_risks.datasets.utils module</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="modules/models/modules.html">pyro_risks.models</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="modules/models/predict.html">Predict module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="modules/models/score_v0.html">Score_v0 module</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Contributing</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="overview/CONTRIBUTING.html">Contributing to Pyro-Risks</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="overview/CONTRIBUTING.html#project-structure-and-conventions">Project structure and conventions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="overview/CONTRIBUTING.html#codebase-structure">Codebase structure</a></li>
+<li class="toctree-l3"><a class="reference internal" href="overview/CONTRIBUTING.html#continuous-integration">Continuous Integration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="overview/CONTRIBUTING.html#style-conventions">Style conventions</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="overview/CONTRIBUTING.html#contributing-to-the-project">Contributing to the project</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="overview/CONTRIBUTING.html#project-setup">Project Setup</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="overview/CONTRIBUTING.html#create-a-virtual-environment">1. Create a virtual environment</a></li>
+<li class="toctree-l4"><a class="reference internal" href="overview/CONTRIBUTING.html#fork-the-repository">2. Fork the repository</a></li>
+<li class="toctree-l4"><a class="reference internal" href="overview/CONTRIBUTING.html#set-origin-and-upstream-remotes-repositories">3. Set origin and upstream remotes repositories</a></li>
+<li class="toctree-l4"><a class="reference internal" href="overview/CONTRIBUTING.html#install-project-dependencies">4. Install project dependencies</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="overview/CONTRIBUTING.html#contributing-workflow">Contributing workflow</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="overview/CONTRIBUTING.html#opening-an-issue">Opening an issue</a></li>
 </ul>
 </li>
 </ul>
@@ -173,25 +246,153 @@
 <h1 id="index">Index</h1>
 
 <div class="genindex-jumpbox">
- <a href="#B"><strong>B</strong></a>
+ <a href="#A"><strong>A</strong></a>
+ | <a href="#B"><strong>B</strong></a>
+ | <a href="#C"><strong>C</strong></a>
+ | <a href="#D"><strong>D</strong></a>
+ | <a href="#E"><strong>E</strong></a>
+ | <a href="#F"><strong>F</strong></a>
  | <a href="#G"><strong>G</strong></a>
+ | <a href="#I"><strong>I</strong></a>
+ | <a href="#K"><strong>K</strong></a>
+ | <a href="#L"><strong>L</strong></a>
  | <a href="#M"><strong>M</strong></a>
  | <a href="#N"><strong>N</strong></a>
  | <a href="#P"><strong>P</strong></a>
+ | <a href="#S"><strong>S</strong></a>
+ | <a href="#T"><strong>T</strong></a>
+ | <a href="#U"><strong>U</strong></a>
+ | <a href="#X"><strong>X</strong></a>
  
 </div>
+<h2 id="A">A</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="modules/models/score_v0.html#pyro_risks.models.score_v0.add_lags">add_lags() (in module pyro_risks.models.score_v0)</a>
+</li>
+  </ul></td>
+</tr></table>
+
 <h2 id="B">B</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="datasets.html#pyro_risks.datasets.BDIFFHistory">BDIFFHistory (class in pyro_risks.datasets)</a>
+      <li><a href="modules/datasets/bdiff.html#pyro_risks.datasets.wildfires.BDIFFHistory">BDIFFHistory (class in pyro_risks.datasets.wildfires)</a>
 </li>
+  </ul></td>
+</tr></table>
+
+<h2 id="C">C</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="modules/datasets/datasets.html#pyro_risks.datasets.queries_api.call_era5land">call_era5land() (in module pyro_risks.datasets.queries_api)</a>
+</li>
+      <li><a href="modules/datasets/datasets.html#pyro_risks.datasets.queries_api.call_era5t">call_era5t() (in module pyro_risks.datasets.queries_api)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="modules/datasets/datasets.html#pyro_risks.datasets.queries_api.call_fwi">call_fwi() (in module pyro_risks.datasets.queries_api)</a>
+</li>
+      <li><a href="modules/datasets/copernicus_fwi.html#pyro_risks.datasets.fwi.create_departement_df">create_departement_df() (in module pyro_risks.datasets.fwi)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="D">D</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="modules/datasets/datasets.html#pyro_risks.datasets.utils.download">download() (in module pyro_risks.datasets.utils)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="E">E</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="modules/datasets/copernicus_era.html#pyro_risks.datasets.ERA5.ERA5Land">ERA5Land (class in pyro_risks.datasets.ERA5)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="modules/datasets/copernicus_era.html#pyro_risks.datasets.ERA5.ERA5T">ERA5T (class in pyro_risks.datasets.ERA5)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="F">F</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="modules/datasets/datasets.html#pyro_risks.datasets.utils.find_closest_location">find_closest_location() (in module pyro_risks.datasets.utils)</a>
+</li>
+      <li><a href="modules/datasets/datasets.html#pyro_risks.datasets.utils.find_closest_weather_station">find_closest_weather_station() (in module pyro_risks.datasets.utils)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="modules/datasets/nasa_firms.html#pyro_risks.datasets.nasa_wildfires.NASAFIRMS.fmt">fmt (pyro_risks.datasets.nasa_wildfires.NASAFIRMS attribute)</a>
+
+      <ul>
+        <li><a href="modules/datasets/nasa_firms.html#pyro_risks.datasets.nasa_wildfires.NASAFIRMS_VIIRS.fmt">(pyro_risks.datasets.nasa_wildfires.NASAFIRMS_VIIRS attribute)</a>
+</li>
+      </ul></li>
   </ul></td>
 </tr></table>
 
 <h2 id="G">G</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="datasets.html#pyro_risks.datasets.get_french_geom">get_french_geom() (in module pyro_risks.datasets)</a>
+      <li><a href="modules/datasets/datasets.html#pyro_risks.datasets.utils.get_fname">get_fname() (in module pyro_risks.datasets.utils)</a>
+</li>
+      <li><a href="modules/datasets/masks.html#pyro_risks.datasets.masks.get_french_geom">get_french_geom() (in module pyro_risks.datasets.masks)</a>
+</li>
+      <li><a href="modules/datasets/copernicus_fwi.html#pyro_risks.datasets.fwi.get_fwi_data">get_fwi_data() (in module pyro_risks.datasets.fwi)</a>
+</li>
+      <li><a href="modules/datasets/copernicus_fwi.html#pyro_risks.datasets.fwi.get_fwi_data_for_predict">get_fwi_data_for_predict() (in module pyro_risks.datasets.fwi)</a>
+</li>
+      <li><a href="modules/datasets/copernicus_fwi.html#pyro_risks.datasets.fwi.get_fwi_from_api">get_fwi_from_api() (in module pyro_risks.datasets.fwi)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="modules/datasets/datasets.html#pyro_risks.datasets.utils.get_ghcn">get_ghcn() (in module pyro_risks.datasets.utils)</a>
+</li>
+      <li><a href="modules/models/predict.html#pyro_risks.models.predict.PyroRisk.get_input">get_input() (pyro_risks.models.predict.PyroRisk method)</a>
+</li>
+      <li><a href="modules/datasets/datasets.html#pyro_risks.datasets.utils.get_intersection_range">get_intersection_range() (in module pyro_risks.datasets.utils)</a>
+</li>
+      <li><a href="modules/datasets/datasets.html#pyro_risks.datasets.utils.get_modis">get_modis() (in module pyro_risks.datasets.utils)</a>
+</li>
+      <li><a href="modules/datasets/datasets.html#pyro_risks.datasets.utils.get_nearest_points">get_nearest_points() (in module pyro_risks.datasets.utils)</a>
+</li>
+      <li><a href="modules/datasets/copernicus_fwi.html#pyro_risks.datasets.fwi.GwisFwi">GwisFwi (class in pyro_risks.datasets.fwi)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="I">I</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="modules/datasets/copernicus_fwi.html#pyro_risks.datasets.fwi.include_department">include_department() (in module pyro_risks.datasets.fwi)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="K">K</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="modules/datasets/nasa_firms.html#pyro_risks.datasets.nasa_wildfires.NASAFIRMS.kept_cols">kept_cols (pyro_risks.datasets.nasa_wildfires.NASAFIRMS attribute)</a>
+
+      <ul>
+        <li><a href="modules/datasets/nasa_firms.html#pyro_risks.datasets.nasa_wildfires.NASAFIRMS_VIIRS.kept_cols">(pyro_risks.datasets.nasa_wildfires.NASAFIRMS_VIIRS attribute)</a>
+</li>
+        <li><a href="modules/datasets/noaa_ncei.html#pyro_risks.datasets.weather.NOAAWeather.kept_cols">(pyro_risks.datasets.weather.NOAAWeather attribute)</a>
+</li>
+        <li><a href="modules/datasets/bdiff.html#pyro_risks.datasets.wildfires.BDIFFHistory.kept_cols">(pyro_risks.datasets.wildfires.BDIFFHistory attribute)</a>
+</li>
+      </ul></li>
+  </ul></td>
+</tr></table>
+
+<h2 id="L">L</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="modules/datasets/copernicus_fwi.html#pyro_risks.datasets.fwi.load_data">load_data() (in module pyro_risks.datasets.fwi)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -199,11 +400,45 @@
 <h2 id="M">M</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="modules/datasets/datasets.html#pyro_risks.datasets.datasets_mergers.merge_by_proximity">merge_by_proximity() (in module pyro_risks.datasets.datasets_mergers)</a>
+</li>
+      <li><a href="modules/datasets/datasets.html#pyro_risks.datasets.datasets_mergers.merge_datasets_by_closest_weather_point">merge_datasets_by_closest_weather_point() (in module pyro_risks.datasets.datasets_mergers)</a>
+</li>
+      <li><a href="modules/datasets/datasets.html#pyro_risks.datasets.datasets_mergers.merge_datasets_by_closest_weather_station">merge_datasets_by_closest_weather_station() (in module pyro_risks.datasets.datasets_mergers)</a>
+</li>
+      <li><a href="modules/datasets/datasets.html#pyro_risks.datasets.datasets_mergers.merge_datasets_by_departements">merge_datasets_by_departements() (in module pyro_risks.datasets.datasets_mergers)</a>
+</li>
+      <li><a href="modules/datasets/datasets.html#pyro_risks.datasets.era_fwi_viirs.MergedEraFwiViirs">MergedEraFwiViirs (class in pyro_risks.datasets.era_fwi_viirs)</a>
+</li>
       <li>
     module
 
       <ul>
         <li><a href="index.html#module-pyro_risks">pyro_risks</a>
+</li>
+        <li><a href="modules/datasets/datasets.html#module-pyro_risks.datasets.datasets_mergers">pyro_risks.datasets.datasets_mergers</a>
+</li>
+        <li><a href="modules/datasets/copernicus_era.html#module-pyro_risks.datasets.ERA5">pyro_risks.datasets.ERA5</a>
+</li>
+        <li><a href="modules/datasets/datasets.html#module-pyro_risks.datasets.era_fwi_viirs">pyro_risks.datasets.era_fwi_viirs</a>
+</li>
+        <li><a href="modules/datasets/copernicus_fwi.html#module-pyro_risks.datasets.fwi">pyro_risks.datasets.fwi</a>
+</li>
+        <li><a href="modules/datasets/masks.html#module-pyro_risks.datasets.masks">pyro_risks.datasets.masks</a>
+</li>
+        <li><a href="modules/datasets/nasa_firms.html#module-pyro_risks.datasets.nasa_wildfires">pyro_risks.datasets.nasa_wildfires</a>
+</li>
+        <li><a href="modules/datasets/datasets.html#module-pyro_risks.datasets.queries_api">pyro_risks.datasets.queries_api</a>
+</li>
+        <li><a href="modules/datasets/datasets.html#module-pyro_risks.datasets.utils">pyro_risks.datasets.utils</a>
+</li>
+        <li><a href="modules/datasets/noaa_ncei.html#module-pyro_risks.datasets.weather">pyro_risks.datasets.weather</a>
+</li>
+        <li><a href="modules/datasets/bdiff.html#module-pyro_risks.datasets.wildfires">pyro_risks.datasets.wildfires</a>
+</li>
+        <li><a href="modules/models/predict.html#module-pyro_risks.models.predict">pyro_risks.models.predict</a>
+</li>
+        <li><a href="modules/models/score_v0.html#module-pyro_risks.models.score_v0">pyro_risks.models.score_v0</a>
 </li>
       </ul></li>
   </ul></td>
@@ -212,7 +447,13 @@
 <h2 id="N">N</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="datasets.html#pyro_risks.datasets.NOAAWeather">NOAAWeather (class in pyro_risks.datasets)</a>
+      <li><a href="modules/datasets/nasa_firms.html#pyro_risks.datasets.nasa_wildfires.NASAFIRMS">NASAFIRMS (class in pyro_risks.datasets.nasa_wildfires)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="modules/datasets/nasa_firms.html#pyro_risks.datasets.nasa_wildfires.NASAFIRMS_VIIRS">NASAFIRMS_VIIRS (class in pyro_risks.datasets.nasa_wildfires)</a>
+</li>
+      <li><a href="modules/datasets/noaa_ncei.html#pyro_risks.datasets.weather.NOAAWeather">NOAAWeather (class in pyro_risks.datasets.weather)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -220,6 +461,10 @@
 <h2 id="P">P</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="modules/models/predict.html#pyro_risks.models.predict.PyroRisk.predict">predict() (pyro_risks.models.predict.PyroRisk method)</a>
+</li>
+      <li><a href="modules/models/score_v0.html#pyro_risks.models.score_v0.prepare_dataset">prepare_dataset() (in module pyro_risks.models.score_v0)</a>
+</li>
       <li>
     pyro_risks
 
@@ -227,6 +472,130 @@
         <li><a href="index.html#module-pyro_risks">module</a>
 </li>
       </ul></li>
+      <li>
+    pyro_risks.datasets.datasets_mergers
+
+      <ul>
+        <li><a href="modules/datasets/datasets.html#module-pyro_risks.datasets.datasets_mergers">module</a>
+</li>
+      </ul></li>
+      <li>
+    pyro_risks.datasets.ERA5
+
+      <ul>
+        <li><a href="modules/datasets/copernicus_era.html#module-pyro_risks.datasets.ERA5">module</a>
+</li>
+      </ul></li>
+      <li>
+    pyro_risks.datasets.era_fwi_viirs
+
+      <ul>
+        <li><a href="modules/datasets/datasets.html#module-pyro_risks.datasets.era_fwi_viirs">module</a>
+</li>
+      </ul></li>
+      <li>
+    pyro_risks.datasets.fwi
+
+      <ul>
+        <li><a href="modules/datasets/copernicus_fwi.html#module-pyro_risks.datasets.fwi">module</a>
+</li>
+      </ul></li>
+      <li>
+    pyro_risks.datasets.masks
+
+      <ul>
+        <li><a href="modules/datasets/masks.html#module-pyro_risks.datasets.masks">module</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li>
+    pyro_risks.datasets.nasa_wildfires
+
+      <ul>
+        <li><a href="modules/datasets/nasa_firms.html#module-pyro_risks.datasets.nasa_wildfires">module</a>
+</li>
+      </ul></li>
+      <li>
+    pyro_risks.datasets.queries_api
+
+      <ul>
+        <li><a href="modules/datasets/datasets.html#module-pyro_risks.datasets.queries_api">module</a>
+</li>
+      </ul></li>
+      <li>
+    pyro_risks.datasets.utils
+
+      <ul>
+        <li><a href="modules/datasets/datasets.html#module-pyro_risks.datasets.utils">module</a>
+</li>
+      </ul></li>
+      <li>
+    pyro_risks.datasets.weather
+
+      <ul>
+        <li><a href="modules/datasets/noaa_ncei.html#module-pyro_risks.datasets.weather">module</a>
+</li>
+      </ul></li>
+      <li>
+    pyro_risks.datasets.wildfires
+
+      <ul>
+        <li><a href="modules/datasets/bdiff.html#module-pyro_risks.datasets.wildfires">module</a>
+</li>
+      </ul></li>
+      <li>
+    pyro_risks.models.predict
+
+      <ul>
+        <li><a href="modules/models/predict.html#module-pyro_risks.models.predict">module</a>
+</li>
+      </ul></li>
+      <li>
+    pyro_risks.models.score_v0
+
+      <ul>
+        <li><a href="modules/models/score_v0.html#module-pyro_risks.models.score_v0">module</a>
+</li>
+      </ul></li>
+      <li><a href="modules/models/predict.html#pyro_risks.models.predict.PyroRisk">PyroRisk (class in pyro_risks.models.predict)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="S">S</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="modules/models/score_v0.html#pyro_risks.models.score_v0.split_train_test">split_train_test() (in module pyro_risks.models.score_v0)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="T">T</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="modules/models/score_v0.html#pyro_risks.models.score_v0.target_correlated_features">target_correlated_features() (in module pyro_risks.models.score_v0)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="modules/models/score_v0.html#pyro_risks.models.score_v0.train_random_forest">train_random_forest() (in module pyro_risks.models.score_v0)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="U">U</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="modules/datasets/datasets.html#pyro_risks.datasets.utils.url_retrieve">url_retrieve() (in module pyro_risks.datasets.utils)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="X">X</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="modules/models/score_v0.html#pyro_risks.models.score_v0.xgb_model">xgb_model() (in module pyro_risks.models.score_v0)</a>
+</li>
   </ul></td>
 </tr></table>
 

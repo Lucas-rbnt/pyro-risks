@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>pyro_risks &mdash; pyro_risks 0.1.0a0-git documentation</title>
+  <title>Pyronear Wildfire Risk Forecasting Documentation &mdash; pyro_risks 0.1.0a0-git documentation</title>
   
 
   
@@ -36,7 +36,7 @@
   <link rel="stylesheet" href="_static/css/my_theme.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Installation" href="installing.html" /> 
+    <link rel="next" title="Package installation" href="overview/README.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -50,9 +50,12 @@
           
 
           
-            <a href="#" class="icon icon-home"> pyro_risks
+            <a href="#">
           
 
+          
+            
+            <img src="_static/pyronear-logo-dark.png" class="logo" alt="Logo"/>
           
           </a>
 
@@ -86,26 +89,96 @@
             
               <p class="caption"><span class="caption-text">Getting Started</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="installing.html">Installation</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="installing.html#via-git">Via Git</a></li>
+<li class="toctree-l1"><a class="reference internal" href="overview/README.html">Package installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="overview/README.html#prerequisites">Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="overview/README.html#installation">Installation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="overview/README.html#package-usage">Package usage</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="overview/README.html#importing-publicly-available-datasets">Importing publicly available datasets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="overview/README.html#running-examples-scripts">Running examples scripts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="overview/README.html#running-the-web-server">Running the web server</a></li>
 </ul>
 </li>
 </ul>
-<p class="caption"><span class="caption-text">Package Documentation</span></p>
+<p class="caption"><span class="caption-text">Publicly Available Datasets</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="datasets.html">pyro_risks.datasets</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="datasets.html#region-tiling">Region tiling</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="datasets.html#france">France</a></li>
+<li class="toctree-l1"><a class="reference internal" href="overview/datasets/NASA-FIRMS_ACTIVE-FIRE_VIIRS.html">NASA FIRMS - Active Fire</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="overview/datasets/NASA-FIRMS_ACTIVE-FIRE_VIIRS.html#technical-background">Technical Background</a></li>
+<li class="toctree-l2"><a class="reference internal" href="overview/datasets/NASA-FIRMS_ACTIVE-FIRE_VIIRS.html#downloading-datasets">Downloading Datasets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="overview/datasets/NASA-FIRMS_ACTIVE-FIRE_VIIRS.html#datasets-descriptions">Datasets Descriptions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="overview/datasets/NASA-FIRMS_ACTIVE-FIRE_VIIRS.html#viirs-modis-differences">VIIRS MODIS Differences</a></li>
+<li class="toctree-l3"><a class="reference internal" href="overview/datasets/NASA-FIRMS_ACTIVE-FIRE_VIIRS.html#viirs-nrt-attribute-fields">VIIRS NRT Attribute Fields</a></li>
+<li class="toctree-l3"><a class="reference internal" href="overview/datasets/NASA-FIRMS_ACTIVE-FIRE_VIIRS.html#modis-nrt-attribute-fields">MODIS NRT Attribute Fields</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="datasets.html#weather-data">Weather data</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="datasets.html#id1">France</a></li>
+<li class="toctree-l2"><a class="reference internal" href="overview/datasets/NASA-FIRMS_ACTIVE-FIRE_VIIRS.html#acknowledgments">Acknowledgments</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="datasets.html#wildfire-history">Wildfire history</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="datasets.html#id2">France</a></li>
+<li class="toctree-l1"><a class="reference internal" href="overview/datasets/CEMS-ECMWF_FDI.html">CEMS ECMWF - Fire Danger Indices</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="overview/datasets/CEMS-ECMWF_FDI.html#technical-background">Technical Background</a></li>
+<li class="toctree-l2"><a class="reference internal" href="overview/datasets/CEMS-ECMWF_FDI.html#downloading-dataset">Downloading Dataset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="overview/datasets/CEMS-ECMWF_FDI.html#datasets-descriptions">Datasets Descriptions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="overview/datasets/CEMS-ECMWF_FDI.html#acknowledgments">Acknowledgments</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="overview/datasets/C3S-ECMWF_ERA5T.html">C3S ECMWF - ERA5T</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="overview/datasets/C3S-ECMWF_ERA5T.html#technical-background">Technical Background</a></li>
+<li class="toctree-l2"><a class="reference internal" href="overview/datasets/C3S-ECMWF_ERA5T.html#downloading-dataset">Downloading Dataset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="overview/datasets/C3S-ECMWF_ERA5T.html#datasets-descriptions">Datasets Descriptions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="overview/datasets/C3S-ECMWF_ERA5T.html#acknowledgments">Acknowledgments</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="overview/datasets/C3S-ECMWF_ERA5LAND.html">C3S ECMWF - ERA5-Land</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="overview/datasets/C3S-ECMWF_ERA5LAND.html#technical-background">Technical Background</a></li>
+<li class="toctree-l2"><a class="reference internal" href="overview/datasets/C3S-ECMWF_ERA5LAND.html#downloading-dataset">Downloading Dataset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="overview/datasets/C3S-ECMWF_ERA5LAND.html#datasets-descriptions">Datasets Descriptions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="overview/datasets/C3S-ECMWF_ERA5LAND.html#acknowledgments">Acknowledgments</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Pyro Risks Package References</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="modules/datasets/modules.html">pyro_risks.datasets</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="modules/datasets/masks.html">Masks module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="modules/datasets/nasa_firms.html">NASA FIRMS - Active Fire module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="modules/datasets/copernicus_fwi.html">Copernicus - FWI module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="modules/datasets/copernicus_era.html">Copernicus - ERA5 module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="modules/datasets/noaa_ncei.html">NOAA NCEI module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="modules/datasets/bdiff.html">BDIFF module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="modules/datasets/datasets.html">pyro_risks.datasets.datasets_mergers module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="modules/datasets/datasets.html#module-pyro_risks.datasets.era_fwi_viirs">pyro_risks.datasets.era_fwi_viirs module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="modules/datasets/datasets.html#module-pyro_risks.datasets.queries_api">pyro_risks.datasets.queries_api module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="modules/datasets/datasets.html#module-pyro_risks.datasets.utils">pyro_risks.datasets.utils module</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="modules/models/modules.html">pyro_risks.models</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="modules/models/predict.html">Predict module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="modules/models/score_v0.html">Score_v0 module</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Contributing</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="overview/CONTRIBUTING.html">Contributing to Pyro-Risks</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="overview/CONTRIBUTING.html#project-structure-and-conventions">Project structure and conventions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="overview/CONTRIBUTING.html#codebase-structure">Codebase structure</a></li>
+<li class="toctree-l3"><a class="reference internal" href="overview/CONTRIBUTING.html#continuous-integration">Continuous Integration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="overview/CONTRIBUTING.html#style-conventions">Style conventions</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="overview/CONTRIBUTING.html#contributing-to-the-project">Contributing to the project</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="overview/CONTRIBUTING.html#project-setup">Project Setup</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="overview/CONTRIBUTING.html#create-a-virtual-environment">1. Create a virtual environment</a></li>
+<li class="toctree-l4"><a class="reference internal" href="overview/CONTRIBUTING.html#fork-the-repository">2. Fork the repository</a></li>
+<li class="toctree-l4"><a class="reference internal" href="overview/CONTRIBUTING.html#set-origin-and-upstream-remotes-repositories">3. Set origin and upstream remotes repositories</a></li>
+<li class="toctree-l4"><a class="reference internal" href="overview/CONTRIBUTING.html#install-project-dependencies">4. Install project dependencies</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="overview/CONTRIBUTING.html#contributing-workflow">Contributing workflow</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="overview/CONTRIBUTING.html#opening-an-issue">Opening an issue</a></li>
 </ul>
 </li>
 </ul>
@@ -153,7 +226,7 @@
     
       <li><a href="#">Docs</a> &raquo;</li>
         
-      <li>pyro_risks</li>
+      <li>Pyronear Wildfire Risk Forecasting Documentation</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -172,31 +245,69 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="pyro-risks">
-<h1>pyro_risks<a class="headerlink" href="#pyro-risks" title="Permalink to this headline">¶</a></h1>
-<p>The <a class="reference internal" href="#module-pyro_risks" title="pyro_risks"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyro_risks</span></code></a> package aggregates pre-processing pipeliens and models for wildfire forecasting and monitoring.</p>
+  <div class="section" id="pyronear-wildfire-risk-forecasting-documentation">
+<h1>Pyronear Wildfire Risk Forecasting Documentation<a class="headerlink" href="#pyronear-wildfire-risk-forecasting-documentation" title="Permalink to this headline">¶</a></h1>
+<p >
+   <a href="LICENSE" alt="License">
+      <img src="https://img.shields.io/badge/License-GPLv3-blue.svg" /></a>
+   <a href="https://github.com/pyronear/pyro-risks/actions?query=workflow%3Apython-package">
+      <img src="https://github.com/pyronear/pyro-risks/workflows/python-package/badge.svg" /></a>
+<a href="https://www.codacy.com/gh/pyronear/pyro-risks/dashboard?utm_source=github.com&utm_medium=referral&utm_content=pyronear/pyro-risks&utm_campaign=Badge_Grade">
+      <img src="https://camo.githubusercontent.com/6361a174bbd36acd5ee8c24b0ef27ba6a84803c2ac9354d57d60d1264d78a31a/68747470733a2f2f6170702e636f646163792e636f6d2f70726f6a6563742f62616467652f47726164652f6532623936393836356539663439633561623934343435643765346132613637" /></a>
+   <a href="https://codecov.io/gh/pyronear/pyro-risks">
+   <img src="https://codecov.io/gh/pyronear/pyro-risks/branch/master/graph/badge.svg" /></a>
+   <a href="https://github.com/psf/black">
+      <img alt="Code style: black" src="https://img.shields.io/badge/code%20style-black-000000.svg"></a>
+</p><p>The pyro-risks project aims at providing the pyronear-platform with a machine learning based wildfire forecasting capability.
+The <a class="reference internal" href="#module-pyro_risks" title="pyro_risks"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyro_risks</span></code></a> package aggregates pre-processing pipelines and models for wildfire forecasting.</p>
 <div class="toctree-wrapper compound">
 <p class="caption"><span class="caption-text">Getting Started</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="installing.html">Installation</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="installing.html#via-git">Via Git</a></li>
+<li class="toctree-l1"><a class="reference internal" href="overview/README.html">Package installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="overview/README.html#prerequisites">Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="overview/README.html#installation">Installation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="overview/README.html#package-usage">Package usage</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="overview/README.html#importing-publicly-available-datasets">Importing publicly available datasets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="overview/README.html#running-examples-scripts">Running examples scripts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="overview/README.html#running-the-web-server">Running the web server</a></li>
 </ul>
 </li>
 </ul>
 </div>
 <div class="toctree-wrapper compound">
-<p class="caption"><span class="caption-text">Package Documentation</span></p>
+<p class="caption"><span class="caption-text">Publicly Available Datasets</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="datasets.html">pyro_risks.datasets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="overview/datasets/NASA-FIRMS_ACTIVE-FIRE_VIIRS.html">NASA FIRMS - Active Fire</a></li>
+<li class="toctree-l1"><a class="reference internal" href="overview/datasets/CEMS-ECMWF_FDI.html">CEMS ECMWF - Fire Danger Indices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="overview/datasets/C3S-ECMWF_ERA5T.html">C3S ECMWF - ERA5T</a></li>
+<li class="toctree-l1"><a class="reference internal" href="overview/datasets/C3S-ECMWF_ERA5LAND.html">C3S ECMWF - ERA5-Land</a></li>
 </ul>
 </div>
-<span class="target" id="module-pyro_risks"></span></div>
-<div class="section" id="indices-and-tables">
-<h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline">¶</a></h1>
-<ul class="simple">
-<li><p><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></p></li>
-<li><p><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></p></li>
+<div class="toctree-wrapper compound">
+<p class="caption"><span class="caption-text">Pyro Risks Package References</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="modules/datasets/modules.html">pyro_risks.datasets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modules/models/modules.html">pyro_risks.models</a></li>
 </ul>
+</div>
+<span class="target" id="module-pyro_risks"></span><div class="toctree-wrapper compound">
+<p class="caption"><span class="caption-text">Contributing</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="overview/CONTRIBUTING.html">Contributing to Pyro-Risks</a></li>
+</ul>
+</div>
+<div class="section" id="acknowledgements">
+<h2>Acknowledgements<a class="headerlink" href="#acknowledgements" title="Permalink to this headline">¶</a></h2>
+<p>This project is developed and maintained by the repo owner and volunteers from
+<a class="reference external" href="https://dataforgood.fr/">Data for Good</a>.</p>
+</div>
+<div class="section" id="license">
+<h2>License<a class="headerlink" href="#license" title="Permalink to this headline">¶</a></h2>
+<p>This project is distributed under the GPLv3 Licenses.
+See <a class="reference external" href="https://github.com/pyronear/pyro-risks/blob/master/LICENSE">LICENSE</a> for more information.</p>
+</div>
 </div>
 
 
@@ -207,7 +318,7 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="installing.html" class="btn btn-neutral float-right" title="Installation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="overview/README.html" class="btn btn-neutral float-right" title="Package installation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
     </div>
