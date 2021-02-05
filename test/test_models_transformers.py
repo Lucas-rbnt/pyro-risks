@@ -4,7 +4,7 @@ import numpy as np
 import pandas as pd
 from pandas.testing import assert_frame_equal, assert_series_equal
 
-from pyro_risks.models import TargetDiscretizer
+from pyro_risks.models import TargetDiscretizer, CategorySelector
 
 
 class TransformersTester(unittest.TestCase):
@@ -27,6 +27,27 @@ class TransformersTester(unittest.TestCase):
         self.assertRaises(TypeError, TargetDiscretizer, [0, 1])
         self.assertRaises(TypeError, TargetDiscretizer.fit_resample,
                           np.array([[0, 0, 0], [0, 0, 0]]), np.array([0, 1]))
+
+    def test_category_selector(self):
+        cs = CategorySelector(variable='departement',
+                              category=['Aisne', 'Cantal'])
+        df = pd.DataFrame({
+            "day": ["2019-07-01", "2019-08-02", "2019-06-12"],
+            "departement": ["Aisne", "Cantal", "Savoie"],
+            "fires": [0, 5, 10],
+            "fwi_mean": [13.3, 0.9, 2.5],
+            "ffmc_max": [23, 45.3, 109.0],
+        })
+        X = df.drop(columns=['fires'])
+        y = df['fires']
+
+        Xr, yr = cs.fit_resample(X, y)
+
+        self.assertRaises(TypeError, CategorySelector, 'departement', 0)
+        self.assertRaises(TypeError, CategorySelector.fit_resample,
+                          np.array([[0, 0, 0], [0, 0, 0]]), np.array([0, 1]))
+        assert_frame_equal(Xr, X[X['departement'].isin(['Aisne', 'Cantal'])])
+        assert_series_equal(yr, y[X['departement'].isin(['Aisne', 'Cantal'])])
 
 
 if __name__ == "__main__":
