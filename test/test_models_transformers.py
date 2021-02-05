@@ -24,6 +24,9 @@ class TransformersTester(unittest.TestCase):
         Xr, yr = td.fit_resample(X, y)
         assert_series_equal(yr, pd.Series([0, 1, 1], name="fires"))
         assert_frame_equal(Xr, X)
+        self.assertRaises(TypeError, TargetDiscretizer, [0, 1])
+        self.assertRaises(TypeError, TargetDiscretizer.fit_resample,
+                          np.array([[0, 0, 0], [0, 0, 0]]), np.array([0, 1]))
 
 
 if __name__ == "__main__":

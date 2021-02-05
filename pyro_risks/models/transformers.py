@@ -19,7 +19,12 @@ class TargetDiscretizer:
     """
 
     def __init__(self, discretizer: callable):
-        self.discretizer = discretizer
+
+        if callable(discretizer):
+            self.discretizer = discretizer
+        else:
+            raise TypeError(
+                f'{self.__class__.__name__} constructor expect a callable')
 
     def fit_resample(self, X: pd.DataFrame,
                      y: pd.Series) -> Tuple[pd.DataFrame, pd.Series]:
@@ -47,11 +52,6 @@ class TargetDiscretizer:
                 f'{self.__class__.__name__} fit_resample methods expect pd.DataFrame and\
                     pd.Series as inputs.')
 
-        if callable(self.discretizer):
-            y = y.apply(self.discretizer)
-
-        else:
-            raise TypeError(
-                f'{self.__class__.__name__} constructor expect a callable')
+        y = y.apply(self.discretizer)
 
         return X, y
