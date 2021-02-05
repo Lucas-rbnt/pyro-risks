@@ -4,7 +4,7 @@ import numpy as np
 import pandas as pd
 from pandas.testing import assert_frame_equal, assert_series_equal
 
-from pyro_risks.models import TargetDiscretizer, CategorySelector
+from pyro_risks.models import TargetDiscretizer, CategorySelector, Imputer
 
 
 class TransformersTester(unittest.TestCase):
@@ -48,6 +48,30 @@ class TransformersTester(unittest.TestCase):
                           np.array([[0, 0, 0], [0, 0, 0]]), np.array([0, 1]))
         assert_frame_equal(Xr, X[X['departement'].isin(['Aisne', 'Cantal'])])
         assert_series_equal(yr, y[X['departement'].isin(['Aisne', 'Cantal'])])
+
+    def test_imputer(self):
+        imp = Imputer(strategy="median")
+        df = pd.DataFrame({
+            "fires": [0, 5, 10],
+            "fwi_mean": [13.3, np.nan, 2.5],
+            "ffmc_max": [23, np.nan, 109.0],
+        })
+
+        X = df.drop(columns=['fires'])
+        y = df['fires']
+
+        imp.fit(X, y)
+
+        Xr = imp.transform(X)
+
+        self.assertRaises(TypeError, Imputer.transform,
+                          np.array([[0, 0, 0], [0, 0, 0]]), np.array([0, 1]))
+        assert_frame_equal(
+            Xr,
+            pd.DataFrame({
+                "fwi_mean": [13.3, 7.9, 2.5],
+                "ffmc_max": [23, 66.0, 109.0],
+            }))
 
 
 if __name__ == "__main__":

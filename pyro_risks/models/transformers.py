@@ -58,9 +58,7 @@ class TargetDiscretizer:
 
 
 class CategorySelector:
-
-    def __init__(self, variable: str, category: Union[str, list]):
-        """Select features and targets rows.
+    """Select features and targets rows.
 
         The `CategorySelector` transformer select features and targets rows
         belonging to given variable categories.
@@ -69,6 +67,8 @@ class CategorySelector:
             variable: variable to be used for selection.
             category: modalities to be selected.
         """
+
+    def __init__(self, variable: str, category: Union[str, list]):
 
         self.variable = variable
         # Catch or prevent key errors
@@ -111,3 +111,65 @@ class CategorySelector:
                     pd.Series as inputs.')
 
         return XR, yr
+
+
+class Imputer(SimpleImputer):
+    """Impute missing values.
+
+    The `Imputer` transformer wraps scikit-learn SimpleImputer transformer.
+
+    Parameters:
+        missing_values: the placeholder for the missing values.
+        strategy: the imputation strategy (mean, median, most_frequent, constant).
+        fill_value: fill_value is used to replace all occurrences of missing_values (default to 0).
+        verbose: controls the verbosity of the imputer.
+        copy: If True, a copy of X will be created.
+        add_indicator: If True, a MissingIndicator transform will stack onto output of the imputer’s transform.
+    """
+
+    def __init__(self,
+                 missing_values: Union[int, float, str] = np.nan,
+                 strategy: str = 'mean',
+                 fill_value: float = None,
+                 verbose: int = 0,
+                 copy: bool = True,
+                 add_indicator: bool = False):
+        super().__init__(missing_values=missing_values,
+                         strategy=strategy,
+                         fill_value=fill_value,
+                         verbose=verbose,
+                         copy=copy,
+                         add_indicator=add_indicator)
+
+    def fit(self, X: pd.DataFrame, y: Optional[pd.Series] = None):
+        """Fit the imputer on X.
+
+        Args:
+            X: Training dataset features.
+            y: Training dataset target.
+
+        Returns:
+                Transformer.
+        """
+        if isinstance(X, pd.DataFrame) and isinstance(y, pd.Series):
+            X = X.copy()
+            y = y.copy()
+        else:
+            raise TypeError(
+                f'{self.__class__.__name__} transformer fit methods expect pd.DataFrame\
+                    and pd.Series as inputs.')
+        super().fit(X, y)
+        return self
+
+    def transform(self, X: pd.DataFrame) -> pd.DataFrame:
+        """Impute X missing values.
+
+        Args:
+            X: Training dataset features.
+
+        Returns:
+                Transformed training dataset.
+        """
+        X[X.columns] = super().transform(X)
+
+        return X
