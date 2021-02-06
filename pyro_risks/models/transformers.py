@@ -1,7 +1,6 @@
 from typing import List, Union, Optional, Dict, Tuple
 from sklearn.base import BaseEstimator, TransformerMixin
 from sklearn.impute import SimpleImputer
-from sklearn.utils import column_or_1d
 from datetime import datetime
 
 import pandas as pd
@@ -172,4 +171,81 @@ class Imputer(SimpleImputer):
         """
         X[X.columns] = super().transform(X)
 
+        return X
+
+
+class LagTransformer(BaseEstimator, TransformerMixin):
+    """Add lags to dataframe df of the selected columns.
+
+    Lags added correspond to day -1, -3 and -7 and are added to each department separately.
+
+    Parameters:
+        date_column: date column.
+        columns: columns on which to add lags
+    """
+
+    def __init__(self, date_column: str, zone_column: str, columns: List[str]):
+        self.date_column = date_column
+        self.zone_column = zone_column
+        self.columns = columns
+
+    def fit(self, X: pd.DataFrame, y: Optional[pd.Series] = None):
+        """Fit the imputer on X.
+
+        Args:
+            X: Training dataset features.
+            y: Training dataset target.
+
+        Returns:
+                Transformer.
+        """
+        if isinstance(X, pd.DataFrame) and isinstance(y, pd.Series):
+            X = X.copy()
+            y = y.copy()
+        else:
+            raise TypeError(
+                f'{self.__class__.__name__} transformer fit methods expect pd.DataFrame\
+                    and pd.Series as inputs.')
+        return self
+
+    def transform(self, X: pd.DataFrame) -> pd.DataFrame:
+        """Create lag features.
+
+        Args:
+            X: Training dataset features.
+
+        Returns:
+                Transformed training dataset.
+        """
+        #check_x
+        if isinstance(X, pd.DataFrame):
+            X = X.copy()
+        else:
+            raise TypeError(
+                f'{self.__class__.__name__} transformer fit methods expect pd.DataFrame\
+                    and pd.Series as inputs.')
+
+        if X[self.date_column].dtypes != 'datetime64[ns]':
+            raise TypeError(
+                f'{self.__class__.__name__} transforme methods expect date_column of type datetime64[ns]'
+            )
+
+        for var in self.columns:
+            for dep in X[self.zone_column].unique():
+                tmp = X[X[self.zone_column] == dep][[self.date_column,
+                                                     var]].set_index(
+                                                         self.date_column)
+                tmp1 = tmp.copy()
+                tmp1 = tmp1.join(tmp.shift(periods=1, freq="D"),
+                                 rsuffix="_lag1",
+                                 how="left")
+                tmp1 = tmp1.join(tmp.shift(periods=3, freq="D"),
+                                 rsuffix="_lag3",
+                                 how="left")
+                tmp1 = tmp1.join(tmp.shift(periods=7, freq="D"),
+                                 rsuffix="_lag7",
+                                 how="left")
+                new_vars = [var + "_lag1", var + "_lag3", var + "_lag7"]
+                X.loc[X[self.zone_column] == dep,
+                      new_vars] = tmp1[new_vars].values
         return X
