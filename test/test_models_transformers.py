@@ -1,7 +1,7 @@
 import unittest
-
 import numpy as np
 import pandas as pd
+
 from pandas.testing import assert_frame_equal, assert_series_equal
 
 from pyro_risks.models import (TargetDiscretizer, CategorySelector, Imputer,
@@ -26,8 +26,6 @@ class TransformersTester(unittest.TestCase):
         assert_series_equal(yr, pd.Series([0, 1, 1], name="fires"))
         assert_frame_equal(Xr, X)
         self.assertRaises(TypeError, TargetDiscretizer, [0, 1])
-        self.assertRaises(TypeError, TargetDiscretizer.fit_resample,
-                          np.array([[0, 0, 0], [0, 0, 0]]), np.array([0, 1]))
 
     def test_category_selector(self):
         cs = CategorySelector(variable='departement',
@@ -45,8 +43,6 @@ class TransformersTester(unittest.TestCase):
         Xr, yr = cs.fit_resample(X, y)
 
         self.assertRaises(TypeError, CategorySelector, 'departement', 0)
-        self.assertRaises(TypeError, CategorySelector.fit_resample,
-                          np.array([[0, 0, 0], [0, 0, 0]]), np.array([0, 1]))
         assert_frame_equal(Xr, X[X['departement'].isin(['Aisne', 'Cantal'])])
         assert_series_equal(yr, y[X['departement'].isin(['Aisne', 'Cantal'])])
 
@@ -65,8 +61,6 @@ class TransformersTester(unittest.TestCase):
 
         Xr = imp.transform(X)
 
-        self.assertRaises(TypeError, Imputer.transform,
-                          np.array([[0, 0, 0], [0, 0, 0]]), np.array([0, 1]))
         assert_frame_equal(
             Xr,
             pd.DataFrame({

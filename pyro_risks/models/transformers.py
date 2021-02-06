@@ -1,6 +1,7 @@
 from typing import List, Union, Optional, Dict, Tuple
 from sklearn.base import BaseEstimator, TransformerMixin
 from sklearn.impute import SimpleImputer
+from .utils import check_xy, check_x
 from datetime import datetime
 
 import pandas as pd
@@ -42,14 +43,7 @@ class TargetDiscretizer:
                 Training dataset features and target tuple.
         """
 
-        if isinstance(X, pd.DataFrame) and isinstance(y, pd.Series):
-            X = X.copy()
-            y = y.copy()
-
-        else:
-            raise TypeError(
-                f'{self.__class__.__name__} fit_resample methods expect pd.DataFrame and\
-                    pd.Series as inputs.')
+        X, y = check_xy(X, y)
 
         y = y.apply(self.discretizer)
 
@@ -150,13 +144,8 @@ class Imputer(SimpleImputer):
         Returns:
                 Transformer.
         """
-        if isinstance(X, pd.DataFrame) and isinstance(y, pd.Series):
-            X = X.copy()
-            y = y.copy()
-        else:
-            raise TypeError(
-                f'{self.__class__.__name__} transformer fit methods expect pd.DataFrame\
-                    and pd.Series as inputs.')
+        X, y = check_xy(X, y)
+
         super().fit(X, y)
         return self
 
@@ -169,6 +158,9 @@ class Imputer(SimpleImputer):
         Returns:
                 Transformed training dataset.
         """
+
+        X = check_x(X)
+
         X[X.columns] = super().transform(X)
 
         return X
@@ -199,13 +191,9 @@ class LagTransformer(BaseEstimator, TransformerMixin):
         Returns:
                 Transformer.
         """
-        if isinstance(X, pd.DataFrame) and isinstance(y, pd.Series):
-            X = X.copy()
-            y = y.copy()
-        else:
-            raise TypeError(
-                f'{self.__class__.__name__} transformer fit methods expect pd.DataFrame\
-                    and pd.Series as inputs.')
+
+        X, y = check_xy(X, y)
+
         return self
 
     def transform(self, X: pd.DataFrame) -> pd.DataFrame:
@@ -217,13 +205,8 @@ class LagTransformer(BaseEstimator, TransformerMixin):
         Returns:
                 Transformed training dataset.
         """
-        #check_x
-        if isinstance(X, pd.DataFrame):
-            X = X.copy()
-        else:
-            raise TypeError(
-                f'{self.__class__.__name__} transformer fit methods expect pd.DataFrame\
-                    and pd.Series as inputs.')
+
+        X = check_x(X)
 
         if X[self.date_column].dtypes != 'datetime64[ns]':
             raise TypeError(
@@ -282,6 +265,7 @@ class FeatureSelector(BaseEstimator, TransformerMixin):
         Returns:
                 Transformer.
         """
+        X, y = check_xy(X, y)
         self.target_correlation = (pd.concat(
             [X, y],
             axis=1).corr(method=self.method).loc[y.name].apply(abs).sort_values(
@@ -300,7 +284,9 @@ class FeatureSelector(BaseEstimator, TransformerMixin):
         Returns:
                 Transformed training dataset.
         """
-        X = X.copy()
+
+        X = check_x(X)
+
         mask = self.target_correlation > self.threshold
         self.selected_features = self.target_correlation[mask].index.tolist()
 
