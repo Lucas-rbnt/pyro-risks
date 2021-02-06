@@ -5,7 +5,7 @@ import pandas as pd
 from pandas.testing import assert_frame_equal, assert_series_equal
 
 from pyro_risks.models import (TargetDiscretizer, CategorySelector, Imputer,
-                               LagTransformer)
+                               LagTransformer, FeatureSelector)
 
 
 class TransformersTester(unittest.TestCase):
@@ -126,6 +126,38 @@ class TransformersTester(unittest.TestCase):
                 "fwi_mean": [13.3, 0.9, 2.5],
                 "ffmc_max": [23, 45.3, 109.0],
             }))
+
+    def test_feature_selector(self):
+        fs = FeatureSelector(exclude=['date', 'department'],
+                             method='pearson',
+                             threshold=0.15)
+        df = pd.DataFrame({
+            "date": [
+                np.datetime64("2019-07-01"),
+                np.datetime64("2019-07-04"),
+                np.datetime64("2019-07-06"),
+                np.datetime64("2019-07-07"),
+                np.datetime64("2019-07-08")
+            ],
+            "departement": ["Cantal", "Cantal", "Cantal", "Cantal", "Cantal"],
+            "str_mean": [2, 3, 4, 0, 0],
+            "ffmc_min": [0, 0, 0, 0, 0],
+            "isi_mean": [3, 0, 1, 4, 5],
+            "fires": [1, 1, 1, 0, 0]
+        })
+
+        X = df.drop(columns=['fires'])
+        y = df['fires']
+
+        fs.fit(X, y)
+        X = fs.transform(X)
+
+        res = pd.DataFrame({
+            "str_mean": [2, 3, 4, 0, 0],
+            "isi_mean": [3, 0, 1, 4, 5],
+        })
+
+        assert_frame_equal(res, X)
 
 
 if __name__ == "__main__":

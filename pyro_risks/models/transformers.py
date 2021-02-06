@@ -175,7 +175,7 @@ class Imputer(SimpleImputer):
 
 
 class LagTransformer(BaseEstimator, TransformerMixin):
-    """Add lags to dataframe df of the selected columns.
+    """Add lags features of the selected columns.
 
     Lags added correspond to day -1, -3 and -7 and are added to each department separately.
 
@@ -249,3 +249,59 @@ class LagTransformer(BaseEstimator, TransformerMixin):
                 X.loc[X[self.zone_column] == dep,
                       new_vars] = tmp1[new_vars].values
         return X
+
+
+class FeatureSelector(BaseEstimator, TransformerMixin):
+    """Select features correlated to the target.
+
+    Select features with correlation to the target above the threshold.
+
+    Parameters:
+        method: date column.
+        threshold: columns on which to add lags
+    """
+
+    def __init__(self,
+                 exclude: List[str],
+                 method: str = "pearson",
+                 threshold: int = 0.15):
+
+        self.exclude = exclude
+        self.method = method
+        self.threshold = threshold
+
+    def fit(self, X: pd.DataFrame, y: Optional[pd.Series] = None):
+        """Fit the FeatureSelector on X.
+
+        Compute the correlation matrix.
+
+        Args:
+            X: Training dataset features.
+            y: Training dataset target.
+
+        Returns:
+                Transformer.
+        """
+        self.target_correlation = (pd.concat(
+            [X, y],
+            axis=1).corr(method=self.method).loc[y.name].apply(abs).sort_values(
+                ascending=False))
+        self.target_correlation = self.target_correlation[
+            self.target_correlation.index != y.name]
+
+        return self
+
+    def transform(self, X: pd.DataFrame) -> pd.DataFrame:
+        """Select lag features.
+
+        Args:
+            X: Training dataset features.
+
+        Returns:
+                Transformed training dataset.
+        """
+        X = X.copy()
+        mask = self.target_correlation > self.threshold
+        self.selected_features = self.target_correlation[mask].index.tolist()
+
+        return X[self.selected_features]
