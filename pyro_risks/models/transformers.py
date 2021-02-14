@@ -8,7 +8,7 @@ import pandas as pd
 import numpy as np
 
 
-class TargetDiscretizer:
+class TargetDiscretizer(BaseEstimator):
     """Discretize numerical target variable.
 
     The `TargetDiscretizer` transformer maps target variable values to discrete values using
@@ -50,7 +50,7 @@ class TargetDiscretizer:
         return X, y
 
 
-class CategorySelector:
+class CategorySelector(BaseEstimator):
     """Select features and targets rows.
 
         The `CategorySelector` transformer select features and targets rows
@@ -121,6 +121,7 @@ class Imputer(SimpleImputer):
     """
 
     def __init__(self,
+                 columns: list,
                  missing_values: Union[int, float, str] = np.nan,
                  strategy: str = 'mean',
                  fill_value: float = None,
@@ -134,6 +135,8 @@ class Imputer(SimpleImputer):
                          copy=copy,
                          add_indicator=add_indicator)
 
+        self.columns = columns
+
     def fit(self, X: pd.DataFrame, y: Optional[pd.Series] = None):
         """Fit the imputer on X.
 
@@ -144,7 +147,7 @@ class Imputer(SimpleImputer):
         Returns:
                 Transformer.
         """
-        X, y = check_xy(X, y)
+        X, y = check_xy(X[self.columns], y)
 
         super().fit(X, y)
         return self
@@ -159,7 +162,7 @@ class Imputer(SimpleImputer):
                 Transformed training dataset.
         """
 
-        X = check_x(X)
+        X = check_x(X[self.columns])
 
         X[X.columns] = super().transform(X)
 
