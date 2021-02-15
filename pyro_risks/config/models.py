@@ -1,3 +1,9 @@
+ZONE_COLUMN = "departement"
+
+DATE_COLUMN = "date"
+
+TARGET = "fires"
+
 SELECTED_DEP = [
     "Aisne",
     "Alpes-Maritimes",
@@ -23,6 +29,48 @@ SELECTED_DEP = [
     "Sarthe",
     "Somme",
     "Yonne",
+]
+
+TRAIN_SELECTED_DEP = [
+    "Aisne",
+    "Alpes-Maritimes",
+    "Ardèche",
+    "Ariège",
+    "Aude",
+    "Aveyron",
+    "Cantal",
+    "Eure",
+    "Eure-et-Loir",
+    "Gironde",
+    "Haute-Corse",
+    "Hautes-Pyrénées",
+    "Hérault",
+    "Indre",
+    "Landes",
+    "Loiret",
+    "Lozère",
+    "Marne",
+    "Oise",
+    "Pyrénées-Atlantiques",
+    "Pyrénées-Orientales",
+    "Sarthe",
+    "Somme",
+    "Yonne",
+]
+
+SELECTED_DEP_V0 = [
+    "Pyrénées-Atlantiques",
+    "Hautes-Pyrénées",
+    "Ariège",
+    "Haute-Corse",
+    "Lozère",
+    "Gard",
+    "Hérault",
+    "Bouches-du-Rhônes",
+    "Pyrénées-Orientales",
+    "Cantal",
+    "Alpes-Maritimes",
+    "Aveyron",
 ]
 
 RF_PARAMS = {
@@ -132,29 +180,39 @@ MODEL_VARIABLES = [
     "stl1_std_lag3",
 ]
 
-TRAIN_SELECTED_DEP = [
-    "Aisne",
-    "Alpes-Maritimes",
-    "Ardèche",
-    "Ariège",
-    "Aude",
-    "Aveyron",
-    "Cantal",
-    "Eure",
-    "Eure-et-Loir",
-    "Gironde",
-    "Haute-Corse",
-    "Hautes-Pyrénées",
-    "Hérault",
-    "Indre",
-    "Landes",
-    "Loiret",
-    "Lozère",
-    "Marne",
-    "Oise",
-    "Pyrénées-Atlantiques",
-    "Pyrénées-Orientales",
-    "Sarthe",
-    "Somme",
-    "Yonne",
+LAG_COLUMNS = [
+    'fwi_min', 'fwi_max', 'fwi_mean', 'fwi_std', 'ffmc_min', 'ffmc_max',
+    'ffmc_mean', 'ffmc_std', 'dmc_min', 'dmc_max', 'dmc_mean', 'dmc_std',
+    'dc_min', 'dc_max', 'dc_mean', 'dc_std', 'isi_min', 'isi_max', 'isi_mean',
+    'isi_std', 'bui_min', 'bui_max', 'bui_mean', 'bui_std', 'dsr_min',
+    'dsr_max', 'dsr_mean', 'dsr_std', 'asn_min', 'asn_max', 'asn_mean',
+    'asn_std', 'd2m_min', 'd2m_max', 'd2m_mean', 'd2m_std', 'e_min', 'e_max',
+    'e_mean', 'e_std', 'es_min', 'es_max', 'es_mean', 'es_std', 'fal_min',
+    'fal_max', 'fal_mean', 'fal_std', 'lai_hv_min', 'lai_hv_max', 'lai_hv_mean',
+    'lai_hv_std', 'lai_lv_min', 'lai_lv_max', 'lai_lv_mean', 'lai_lv_std',
+    'lblt_min', 'lblt_max', 'lblt_mean', 'lblt_std', 'licd_min', 'licd_max',
+    'licd_mean', 'licd_std', 'lict_min', 'lict_max', 'lict_mean', 'lict_std',
+    'lmld_min', 'lmld_max', 'lmld_mean', 'lmld_std', 'lmlt_min', 'lmlt_max',
+    'lmlt_mean', 'lmlt_std', 'lshf_min', 'lshf_max', 'lshf_mean', 'lshf_std',
+    'ltlt_min', 'ltlt_max', 'ltlt_mean', 'ltlt_std', 'pev_min', 'pev_max',
+    'pev_mean', 'pev_std', 'ro_min', 'ro_max', 'ro_mean', 'ro_std', 'rsn_min',
+    'rsn_max', 'rsn_mean', 'rsn_std', 'sd_min', 'sd_max', 'sd_mean', 'sd_std',
+    'sf_min', 'sf_max', 'sf_mean', 'sf_std', 'skt_min', 'skt_max', 'skt_mean',
+    'skt_std', 'slhf_min', 'slhf_max', 'slhf_mean', 'slhf_std', 'smlt_min',
+    'smlt_max', 'smlt_mean', 'smlt_std', 'sp_min', 'sp_max', 'sp_mean',
+    'sp_std', 'src_min', 'src_max', 'src_mean', 'src_std', 'sro_min', 'sro_max',
+    'sro_mean', 'sro_std', 'sshf_min', 'sshf_max', 'sshf_mean', 'sshf_std',
+    'ssr_min', 'ssr_max', 'ssr_mean', 'ssr_std', 'ssrd_min', 'ssrd_max',
+    'ssrd_mean', 'ssrd_std', 'ssro_min', 'ssro_max', 'ssro_mean', 'ssro_std',
+    'stl1_min', 'stl1_max', 'stl1_mean', 'stl1_std', 'stl2_min', 'stl2_max',
+    'stl2_mean', 'stl2_std', 'stl3_min', 'stl3_max', 'stl3_mean', 'stl3_std',
+    'stl4_min', 'stl4_max', 'stl4_mean', 'stl4_std', 'str_min', 'str_max',
+    'str_mean', 'str_std', 'strd_min', 'strd_max', 'strd_mean', 'strd_std',
+    'swvl1_min', 'swvl1_max', 'swvl1_mean', 'swvl1_std', 'swvl2_min',
+    'swvl2_max', 'swvl2_mean', 'swvl2_std', 'swvl3_min', 'swvl3_max',
+    'swvl3_mean', 'swvl3_std', 'swvl4_min', 'swvl4_max', 'swvl4_mean',
+    'swvl4_std', 't2m_min', 't2m_max', 't2m_mean', 't2m_std', 'tp_min',
+    'tp_max', 'tp_mean', 'tp_std', 'tsn_min', 'tsn_max', 'tsn_mean', 'tsn_std',
+    'u10_min', 'u10_max', 'u10_mean', 'u10_std', 'v10_min', 'v10_max',
+    'v10_mean', 'v10_std'
 ]
