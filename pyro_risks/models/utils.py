@@ -2,6 +2,8 @@ from typing import List, Union, Optional, Dict, Tuple
 import pandas as pd
 import numpy as np
 
+__all__ = ["check_xy", "check_x"]
+
 
 def check_xy(X: pd.DataFrame, y: pd.Series) -> Tuple[pd.DataFrame, pd.Series]:
     """Validate inputs for transformers.

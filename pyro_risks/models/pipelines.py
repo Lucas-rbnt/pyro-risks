@@ -1,6 +1,6 @@
 from imblearn.pipeline import Pipeline
-from pyro_risks.models import (TargetDiscretizer, CategorySelector, Imputer,
-                               LagTransformer, FeatureSelector)
+from .transformers import (TargetDiscretizer, CategorySelector, Imputer,
+                           LagTransformer, FeatureSelector)
 from sklearn.ensemble import RandomForestClassifier
 from xgboost import XGBClassifier
 
@@ -28,6 +28,6 @@ rf_steps = [
     *base_steps, ('random_forest', RandomForestClassifier(cfg.RF_PARAMS))
 ]
 
-# Define sklearn / imbalanced learn pipeline
+# Define sklearn / imblearn pipelines
 xgb_pipeline = Pipeline(xgb_steps)
 rf_pipeline = Pipeline(rf_steps)
