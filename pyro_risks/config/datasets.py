@@ -41,6 +41,7 @@ XGBMODEL_PATH: str = f"{DATA_FALLBACK}/pyrorisk_xgb_091220.pkl"
 XGBMODEL_ERA5T_PATH: str = f"{DATA_FALLBACK}/pyrorisk_xgb_era5t_151220.pkl"
 
 FWI_VARS = ["fwi", "ffmc", "dmc", "dc", "isi", "bui", "dsr"]
+
 WEATHER_VARS = [
     "u10",
     "v10",

@@ -1,8 +1,12 @@
 ZONE_COLUMN = "departement"
 
-DATE_COLUMN = "date"
+DATE_COLUMN = "day"
 
 TARGET = "fires"
+
+TEST_SIZE = 0.2
+
+RANDOM_STATE = 42
 
 SELECTED_DEP = [
     "Aisne",
