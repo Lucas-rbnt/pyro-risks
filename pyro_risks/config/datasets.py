@@ -27,9 +27,10 @@ TEST_FWI_FALLBACK: str = f"{DATA_FALLBACK}/test_data_FWI.csv"
 TEST_FWI_TO_PREDICT: str = f"{DATA_FALLBACK}/fwi_test_to_predict.csv"
 TEST_ERA_TO_PREDICT: str = f"{DATA_FALLBACK}/era_test_to_predict.csv"
 
-REPO_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), "../"))
-ROOT_DIR = os.path.dirname(os.path.abspath(__file__))
+REPO_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), "../../"))
+ROOT_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), "../"))
 DATA_PATH = os.path.join(REPO_DIR, ".data/")
+MODEL_REGISTRY = os.path.join(REPO_DIR, ".model_registry/")
 
 CDS_URL = "https://cds.climate.copernicus.eu/api/v2"
 CDS_UID = os.getenv("CDS_UID")
