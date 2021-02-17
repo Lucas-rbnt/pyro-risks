@@ -9,7 +9,7 @@ from pyro_risks.datasets.ERA5 import (
     get_data_era5t_for_predict,
 )
 from pyro_risks.datasets.era_fwi_viirs import process_dataset_to_predict
-from pyro_risks.models.pipelines import add_lags
+from .score_v0 import add_lags
 
 __all__ = ["PyroRisk"]
 
